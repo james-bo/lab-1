@@ -1,6 +1,6 @@
 # Лабораторная работа №1
 
-по курсу: **"DEV-OCPJP. Подготовка к сдаче сертификационных экзаменов серии Oracle Certified Professional Java Programmer"**
+_по курсу: "DEV-OCPJP. Подготовка к сдаче сертификационных экзаменов серии Oracle Certified Professional Java Programmer"_
 
 ## Рассматриваемые темы
 
