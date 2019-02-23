@@ -1,5 +1,7 @@
 package ru.avalon.java.ocpjp.labs;
 
+import ru.avalon.java.ocpjp.labs.tasks.arrays.OneDimensionalArrays;
+
 /**
  * Абстратное представление об упражнении.
  */
@@ -32,7 +34,6 @@ public interface Exercise {
      * @return Экземпляр класса, реализующего задание
      */
     static Exercise create(String[] args) {
-        // TODO(Студент): Реализовать метод create интерфейса Exercise
-        throw new UnsupportedOperationException("Not implemented!");
+        return new OneDimensionalArrays();
     }
 }

@@ -5,6 +5,8 @@ import ru.avalon.java.ocpjp.labs.common.Factory;
 import ru.avalon.java.ocpjp.labs.common.ObjectWriter;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Задание, направленное на получение умений и навыков
@@ -40,8 +42,19 @@ public final class OneDimensionalArrays implements Exercise {
     private ObjectWriter<int[]> writer;
 
     public OneDimensionalArrays() {
-        // TODO(Студент): Выполнить инициализацию полей класса OneDimensionalArrays
-        throw new UnsupportedOperationException("Not implemented!");
+        Random r = new Random();
+        this.factory = () -> r.ints(10 + r.nextInt(10), 0, 1000).toArray();
+        this.sort = Arrays::sort;
+        this.writer = new ObjectWriter<int[]>() {
+            @Override
+            public void write(int[] object) throws IOException {
+                System.out.println(Arrays.toString(object));
+            }
+
+            @Override
+            public void close() throws IOException {
+            }
+        };
     }
 
     /**
@@ -50,6 +63,7 @@ public final class OneDimensionalArrays implements Exercise {
     @Override
     public void run() throws IOException {
         int[] array = factory.create();
+        writer.write(array);
         sort.run(array);
         writer.write(array);
     }
